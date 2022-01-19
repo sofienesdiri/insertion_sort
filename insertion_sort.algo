@@ -1,0 +1,26 @@
+PROCEDURE swap(VAR a, VAR b:INTEGER)
+VAR
+   tmp : INTEGER
+BEGIN
+  tmp := a
+  a := b
+  b := tmp
+END
+ALGORITHM insertion_sort
+VAR
+    i:INTEGER
+    j:INTEGER
+    arr : ARRAY_OF INTEGER[];
+BEGIN
+    arr:=[5,4,8,7,9]
+    i:=1
+    WHILE (i<arr.length) DO
+        j:=i
+        WHILE (j>0 AND arr[j-1]>arr[j]) DO
+        swap(arr[j-1],arr[j])
+        j:=j-1
+        END_WHILE
+        i:=i+1
+    END_WHILE
+    
+END
